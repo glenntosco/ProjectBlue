@@ -1,0 +1,70 @@
+@page "/login"
+@layout EmptyLayout
+@inject IConfiguration Configuration
+@inject NavigationManager NavigationManager
+@inject JwtService JwtService
+@inject AuthenticationStateProvider AuthStateProvider
+@inject ILocalStorageService LocalStorage
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center align-center" Style="height: 100vh;">
+    <MudPaper Elevation="3" Class="pa-8" Style="width: 500px;">
+        <MudText Typo="Typo.h4" Class="mb-4 d-flex justify-center">P4 Licensing Platform</MudText>
+        
+        <MudText Typo="Typo.subtitle1" Class="mb-4">Sign in with your credentials</MudText>
+        
+        <MudTextField @bind-Value="model.Email" Label="Email" Variant="Variant.Outlined" 
+                    Class="mb-3" Required="true" RequiredError="Email is required" />
+        
+        <MudTextField @bind-Value="model.Password" Label="Password" Variant="Variant.Outlined" 
+                    Class="mb-5" Type="InputType.Password" Required="true" 
+                    RequiredError="Password is required" />
+        
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" 
+                 OnClick="ProcessLogin" Class="mb-3">Sign In</MudButton>
+        
+        @if (!string.IsNullOrEmpty(errorMessage))
+        {
+            <MudAlert Severity="Severity.Error" Class="mt-3">@errorMessage</MudAlert>
+        }
+    </MudPaper>
+</MudContainer>
+
+@code {
+    private LoginModel model = new LoginModel();
+    private string errorMessage;
+
+    private async Task ProcessLogin()
+    {
+        // For demo purposes - in a real app, this would validate against the database
+        if (model.Email == "admin@p4.software" && model.Password == "admin!2025")
+        {
+            // Generate token for admin
+            var token = JwtService.GenerateToken(
+                "admin",
+                "Admin",
+                null, 
+                new Dictionary<string, bool> {
+                    { "EnableReports", true },
+                    { "EnableAPI", true },
+                    { "AllowBrandingOverrides", true }
+                }
+            );
+
+            // Store the token
+            await LocalStorage.SetItemAsync("authToken", token);
+            
+            // Redirect to dashboard
+            NavigationManager.NavigateTo("/dashboard");
+        }
+        else
+        {
+            errorMessage = "Invalid email or password";
+        }
+    }
+
+    public class LoginModel
+    {
+        public string Email { get; set; }
+        public string Password { get; set; }
+    }
+}

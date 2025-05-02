@@ -1,0 +1,237 @@
+@page "/dashboard/partner"
+@using P4LicensePortal.Services.Interfaces
+@using P4LicensePortal.Models
+@using System.Security.Claims
+@inject IPartnerService PartnerService
+@inject ILicenseService LicenseService
+@inject IKycService KycService
+@inject ICertificationService CertificationService
+@inject IAuditLogService AuditLogService
+@attribute [Authorize(Roles = "Distributor,Reseller")]
+
+<PageTitle>Partner Dashboard - P4 Licensing Platform</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.ExtraLarge" Class="mt-4">
+    <MudText Typo="Typo.h4" Class="mb-4">Partner Dashboard</MudText>
+
+    <MudText Typo="Typo.body1" Class="mb-6">
+        Welcome to your Partner Dashboard. 
+        Here you can manage your licenses, KYC status, and view your performance metrics.
+    </MudText>
+
+    @if (_isLoading)
+    {
+        <MudProgressLinear Color="Color.Primary" Indeterminate="true" Class="my-7" />
+    }
+    else
+    {
+        <MudGrid Spacing="4">
+            <!-- KYC Status Card -->
+            <MudItem xs="12" md="6" lg="4">
+                <KycStatusCard KycProfile="@_kycProfile" />
+            </MudItem>
+
+            <!-- Active Licenses -->
+            <MudItem xs="12" md="6" lg="4">
+                <MudCard Elevation="3" Class="h-100">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Active Licenses</MudText>
+                        </CardHeaderContent>
+                        <CardHeaderActions>
+                            <MudIcon Icon="@Icons.Material.Filled.FactCheck" />
+                        </CardHeaderActions>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudText Typo="Typo.h3" Color="Color.Success" Class="mb-2">@_activeLicenses</MudText>
+                        <MudText Typo="Typo.body2">
+                            Total: @_totalLicenses licences (@(_expiringLicenses) expiring soon)
+                        </MudText>
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Variant="Variant.Text" Color="Color.Primary" Href="/licenses">View Licenses</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+
+            <!-- Certifications -->
+            <MudItem xs="12" md="6" lg="4">
+                <MudCard Elevation="3" Class="h-100">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Certifications</MudText>
+                        </CardHeaderContent>
+                        <CardHeaderActions>
+                            <MudIcon Icon="@Icons.Material.Filled.School" />
+                        </CardHeaderActions>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        @if (_certifications != null && _certifications.Any())
+                        {
+                            <MudList Clickable="false" Dense="true">
+                                @foreach (var cert in _certifications.Take(3))
+                                {
+                                    <MudListItem>
+                                        <div class="d-flex align-center">
+                                            <MudChip Color="cert.IsExpired ? Color.Error : Color.Success" Size="Size.Small" 
+                                                    Class="mr-2">
+                                                @(cert.IsExpired ? "Expired" : "Valid")
+                                            </MudChip>
+                                            <MudText Typo="Typo.body1">@cert.Name</MudText>
+                                        </div>
+                                    </MudListItem>
+                                }
+                            </MudList>
+                        }
+                        else
+                        {
+                            <MudText Typo="Typo.body2">No certifications found.</MudText>
+                        }
+                    </MudCardContent>
+                    <MudCardActions>
+                        <MudButton Variant="Variant.Text" Color="Color.Primary" Href="/certifications">View All</MudButton>
+                    </MudCardActions>
+                </MudCard>
+            </MudItem>
+
+            <!-- Revenue Progress -->
+            <MudItem xs="12">
+                <MudCard Elevation="3">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Revenue & Tier Progress</MudText>
+                        </CardHeaderContent>
+                        <CardHeaderActions>
+                            <MudChip Color="Color.Primary" Size="Size.Small">@_tierName</MudChip>
+                        </CardHeaderActions>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        <MudText Typo="Typo.body2" Class="mb-2">
+                            Progress to next tier: $@_currentRevenue / $@_nextTierThreshold
+                        </MudText>
+                        <MudProgressLinear Color="Color.Secondary" Value="@_tierProgress" Class="my-2" />
+                        <MudText Typo="Typo.body2" Align="Align.Right">@_tierProgress%</MudText>
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+
+            <!-- Recent Activity -->
+            <MudItem xs="12">
+                <MudCard Elevation="3">
+                    <MudCardHeader>
+                        <CardHeaderContent>
+                            <MudText Typo="Typo.h6">Recent Activity</MudText>
+                        </CardHeaderContent>
+                    </MudCardHeader>
+                    <MudCardContent>
+                        @if (_recentActivity != null && _recentActivity.Any())
+                        {
+                            <MudTable Items="@_recentActivity" Hover="true" Bordered="false" Dense="true">
+                                <ColGroup>
+                                    <col style="width: 180px;" />
+                                    <col />
+                                    <col style="width: 150px;" />
+                                </ColGroup>
+                                <HeaderContent>
+                                    <MudTh>Date</MudTh>
+                                    <MudTh>Activity</MudTh>
+                                    <MudTh>Type</MudTh>
+                                </HeaderContent>
+                                <RowTemplate>
+                                    <MudTd>@context.Timestamp.ToString("yyyy-MM-dd HH:mm")</MudTd>
+                                    <MudTd>@context.Description</MudTd>
+                                    <MudTd>@context.Category</MudTd>
+                                </RowTemplate>
+                            </MudTable>
+                        }
+                        else
+                        {
+                            <MudText Typo="Typo.body2">No recent activity to display.</MudText>
+                        }
+                    </MudCardContent>
+                </MudCard>
+            </MudItem>
+        </MudGrid>
+    }
+</MudContainer>
+
+@code {
+    private bool _isLoading = true;
+    private KycProfile _kycProfile;
+    private IEnumerable<Certification> _certifications;
+    private IEnumerable<AuditLog> _recentActivity;
+    
+    // License stats
+    private int _activeLicenses;
+    private int _totalLicenses;
+    private int _expiringLicenses;
+    
+    // Tier progress
+    private string _tierName = "Silver";
+    private decimal _currentRevenue;
+    private decimal _nextTierThreshold;
+    private double _tierProgress;
+    
+    protected override async Task OnInitializedAsync()
+    {
+        try
+        {
+            // Get current partner ID from authenticated user
+            var partnerId = Guid.Parse(GetCurrentPartnerId());
+            
+            // Load partner KYC profile
+            _kycProfile = await KycService.GetKycProfileByPartnerIdAsync(partnerId);
+            
+            // Load partner certifications
+            _certifications = await CertificationService.GetCertificationsByPartnerIdAsync(partnerId);
+            
+            // Load license statistics
+            var licenses = await PartnerService.GetPartnerLicensesAsync(partnerId);
+            _totalLicenses = licenses.Count();
+            _activeLicenses = licenses.Count(l => l.IsActive);
+            _expiringLicenses = licenses.Count(l => !l.IsExpired && l.ExpiryDate < DateTime.UtcNow.AddDays(30));
+            
+            // Calculate tier progress
+            var tierInfo = await PartnerService.GetPartnerTierInfoAsync(partnerId);
+            _tierName = tierInfo.CurrentTier;
+            _currentRevenue = tierInfo.CurrentRevenue;
+            _nextTierThreshold = tierInfo.NextTierThreshold;
+            _tierProgress = (double)((_currentRevenue / _nextTierThreshold) * 100);
+            
+            // Get recent activity
+            _recentActivity = await AuditLogService.GetPartnerAuditLogsAsync(partnerId, 10);
+        }
+        catch (Exception ex)
+        {
+            // Log error
+            await AuditLogService.LogAsync("PartnerDashboard", "LoadError", 
+                $"Error loading dashboard: {ex.Message}", isError: true);
+        }
+        finally
+        {
+            _isLoading = false;
+        }
+    }
+    
+    private string GetCurrentPartnerId()
+    {
+        // This would come from the authenticated user's claims
+        // For demo purposes, we'll return a fixed ID
+        return "5f7d1bd9-4d1f-4b6e-a90e-6a3c8fbf53ec";
+    }
+    
+    // Note: These interfaces are mocked for the dashboard
+    // In a real implementation, you'd define these properly
+    public interface Certification
+    {
+        string Name { get; }
+        bool IsExpired { get; }
+    }
+    
+    public class AuditLog
+    {
+        public DateTime Timestamp { get; set; }
+        public string Description { get; set; }
+        public string Category { get; set; }
+    }
+}

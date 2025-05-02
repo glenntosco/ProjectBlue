@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 
 namespace P4LicensePortal.Models
@@ -21,41 +22,71 @@ namespace P4LicensePortal.Models
         public int MaxUsers { get; set; }
 
         [Required]
+        public DateTime IssuedDate { get; set; }
+
+        [Required]
         public DateTime ExpiryDate { get; set; }
 
-        public DateTime CreatedDate { get; set; } = DateTime.UtcNow;
+        [Required, MaxLength(8000)]
+        public string EncryptedData { get; set; }
 
-        [Required, MaxLength(36)]
-        public string CreatedBy { get; set; }
-
-        public bool IsActive { get; set; } = true;
+        [Required, MaxLength(20)]
+        public string Status { get; set; } // Active, Revoked, Expired
 
         public DateTime? RevokedDate { get; set; }
 
-        [MaxLength(36)]
+        [MaxLength(100)]
         public string RevokedBy { get; set; }
 
-        [Required]
-        public string Signature { get; set; }
+        [MaxLength(500)]
+        public string RevocationReason { get; set; }
 
-        [Required]
-        public string EncryptedLicense { get; set; }
-
-        // Feature flags
-        public bool EnableReports { get; set; }
-        public bool EnableAPI { get; set; }
-        public bool AllowBrandingOverrides { get; set; }
-        public bool IsSandbox { get; set; }
+        [MaxLength(4000)]
+        public string FeatureFlags { get; set; }
 
         // Navigation properties
         public virtual Tenant Tenant { get; set; }
 
         [NotMapped]
-        [JsonIgnore]
         public bool IsExpired => DateTime.UtcNow > ExpiryDate;
 
         [NotMapped]
-        [JsonIgnore]
-        public bool IsValid => IsActive && !IsExpired;
+        public bool IsActive => Status == "Active" && !IsExpired;
+
+        [NotMapped]
+        public Dictionary<string, string> FeatureFlagsDictionary
+        {
+            get
+            {
+                if (string.IsNullOrEmpty(FeatureFlags))
+                    return new Dictionary<string, string>();
+
+                try
+                {
+                    return JsonSerializer.Deserialize<Dictionary<string, string>>(FeatureFlags);
+                }
+                catch
+                {
+                    return new Dictionary<string, string>();
+                }
+            }
+        }
+
+        public bool HasFeature(string featureName)
+        {
+            return FeatureFlagsDictionary.ContainsKey(featureName) &&
+                   FeatureFlagsDictionary[featureName].Equals("true", StringComparison.OrdinalIgnoreCase);
+        }
+
+        public int GetFeatureIntValue(string featureName, int defaultValue = 0)
+        {
+            if (!FeatureFlagsDictionary.ContainsKey(featureName))
+                return defaultValue;
+
+            if (int.TryParse(FeatureFlagsDictionary[featureName], out int value))
+                return value;
+
+            return defaultValue;
+        }
     }
 }

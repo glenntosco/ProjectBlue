@@ -1,6 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using P4LicensePortal.Models;
 using System;
+using CodeBase.Pages.Dashboard;
 
 namespace P4LicensePortal.Data
 {
@@ -17,7 +18,7 @@ namespace P4LicensePortal.Data
         public DbSet<Tenant> Tenants { get; set; }
         public DbSet<KycProfile> KycProfiles { get; set; }
         public DbSet<Certification> Certifications { get; set; }
-        public DbSet<AuditLog> AuditLogs { get; set; }
+        public DbSet<PartnerDashboard.AuditLog> AuditLogs { get; set; }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {

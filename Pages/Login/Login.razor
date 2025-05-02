@@ -1,70 +1,129 @@
 @page "/login"
-@layout EmptyLayout
-@inject IConfiguration Configuration
+@using System.ComponentModel.DataAnnotations
+@using P4LicensePortal.Services.Interfaces
+@using System.Security.Claims
+@using Microsoft.AspNetCore.Components.Server.ProtectedBrowserStorage
+@inject IJwtService JwtService
+@inject IAuditLogService AuditLogService
 @inject NavigationManager NavigationManager
-@inject JwtService JwtService
-@inject AuthenticationStateProvider AuthStateProvider
-@inject ILocalStorageService LocalStorage
+@inject ISnackbar Snackbar
+@inject ProtectedLocalStorage ProtectedLocalStorage
 
-<MudContainer MaxWidth="MaxWidth.Small" Class="d-flex justify-center align-center" Style="height: 100vh;">
+<PageTitle>Login - P4 Licensing Platform</PageTitle>
+
+<MudContainer MaxWidth="MaxWidth.Small" Class="d-flex align-center justify-center" Style="height: 100vh;">
     <MudPaper Elevation="3" Class="pa-8" Style="width: 500px;">
-        <MudText Typo="Typo.h4" Class="mb-4 d-flex justify-center">P4 Licensing Platform</MudText>
-        
-        <MudText Typo="Typo.subtitle1" Class="mb-4">Sign in with your credentials</MudText>
-        
-        <MudTextField @bind-Value="model.Email" Label="Email" Variant="Variant.Outlined" 
-                    Class="mb-3" Required="true" RequiredError="Email is required" />
-        
-        <MudTextField @bind-Value="model.Password" Label="Password" Variant="Variant.Outlined" 
-                    Class="mb-5" Type="InputType.Password" Required="true" 
-                    RequiredError="Password is required" />
-        
-        <MudButton Variant="Variant.Filled" Color="Color.Primary" FullWidth="true" 
-                 OnClick="ProcessLogin" Class="mb-3">Sign In</MudButton>
-        
-        @if (!string.IsNullOrEmpty(errorMessage))
-        {
-            <MudAlert Severity="Severity.Error" Class="mt-3">@errorMessage</MudAlert>
-        }
+        <MudStack Spacing="6">
+            <MudText Typo="Typo.h4" Align="Align.Center">P4 Licensing Platform</MudText>
+            
+            <MudImage Src="/images/logo.png" Alt="P4 Software Logo" Width="180" Height="60" 
+                    Class="mx-auto d-flex justify-center mb-4" ObjectFit="ObjectFit.Contain" />
+            
+            <EditForm Model="@_model" OnValidSubmit="HandleLogin">
+                <DataAnnotationsValidator />
+                <MudStack Spacing="4">
+                    <MudTextField @bind-Value="_model.Email" Label="Email" 
+                                 Variant="Variant.Outlined" Required="true" RequiredError="Email is required"
+                                 InputType="InputType.Email" For="@(() => _model.Email)" />
+                    
+                    <MudTextField @bind-Value="_model.Password" Label="Password" 
+                                 Variant="Variant.Outlined" Required="true" RequiredError="Password is required"
+                                 InputType="InputType.Password" For="@(() => _model.Password)" />
+                    
+                    <MudCheckBox @bind-Checked="_model.RememberMe" Label="Remember me" Color="Color.Primary" />
+                    
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" ButtonType="ButtonType.Submit"
+                              Size="Size.Large" FullWidth="true" DisableElevation="true">
+                        Login
+                    </MudButton>
+                    
+                    <MudDivider />
+                    
+                    <MudLink Href="/forgot-password" Underline="Underline.None">
+                        <MudText Align="Align.Center">Forgot Password?</MudText>
+                    </MudLink>
+                </MudStack>
+            </EditForm>
+        </MudStack>
     </MudPaper>
 </MudContainer>
 
 @code {
-    private LoginModel model = new LoginModel();
-    private string errorMessage;
+    private readonly LoginModel _model = new();
+    private bool _isLoading;
 
-    private async Task ProcessLogin()
+    private class LoginModel
     {
-        // For demo purposes - in a real app, this would validate against the database
-        if (model.Email == "admin@p4.software" && model.Password == "admin!2025")
-        {
-            // Generate token for admin
-            var token = JwtService.GenerateToken(
-                "admin",
-                "Admin",
-                null, 
-                new Dictionary<string, bool> {
-                    { "EnableReports", true },
-                    { "EnableAPI", true },
-                    { "AllowBrandingOverrides", true }
-                }
-            );
+        [Required(ErrorMessage = "Email is required")]
+        [EmailAddress(ErrorMessage = "Invalid email format")]
+        public string Email { get; set; }
 
-            // Store the token
-            await LocalStorage.SetItemAsync("authToken", token);
-            
-            // Redirect to dashboard
-            NavigationManager.NavigateTo("/dashboard");
-        }
-        else
-        {
-            errorMessage = "Invalid email or password";
-        }
+        [Required(ErrorMessage = "Password is required")]
+        public string Password { get; set; }
+
+        public bool RememberMe { get; set; } = false;
     }
 
-    public class LoginModel
+    private async Task HandleLogin()
     {
-        public string Email { get; set; }
-        public string Password { get; set; }
+        try
+        {
+            _isLoading = true;
+            
+            // This is a simplified authentication
+            // In a real app, you would validate against a database
+            if (_model.Email == "admin@p4.software" && _model.Password == "admin!2025")
+            {
+                // Generate JWT token for admin role
+                string token = await JwtService.GenerateToken(
+                    userId: "admin", 
+                    tenantId: "system", 
+                    role: "Admin", 
+                    featureFlags: new Dictionary<string, string>
+                    {
+                        { "EnableReports", "true" },
+                        { "EnableAPI", "true" },
+                        { "AllowBrandingOverrides", "true" },
+                        { "MaxUsers", "999" }
+                    });
+                
+                // Store token in browser storage (secure)
+                if (_model.RememberMe)
+                {
+                    await ProtectedLocalStorage.SetAsync("auth_token", token);
+                }
+                else
+                {
+                    // In a real app, you'd use session storage instead for non-remembered logins
+                    await ProtectedLocalStorage.SetAsync("auth_token", token);
+                }
+                
+                // Log successful login
+                await AuditLogService.LogAsync("Authentication", "Login", 
+                    $"User {_model.Email} logged in successfully");
+                
+                // Redirect to dashboard
+                NavigationManager.NavigateTo("/dashboard");
+            }
+            else
+            {
+                // Log failed login attempt
+                await AuditLogService.LogAsync("Authentication", "LoginFailed", 
+                    $"Failed login attempt for user {_model.Email}", isError: true);
+                    
+                Snackbar.Add("Invalid email or password", Severity.Error);
+            }
+        }
+        catch (Exception ex)
+        {
+            await AuditLogService.LogAsync("Authentication", "LoginError", 
+                $"Error during login: {ex.Message}", isError: true);
+                
+            Snackbar.Add("An error occurred during login", Severity.Error);
+        }
+        finally
+        {
+            _isLoading = false;
+        }
     }
 }

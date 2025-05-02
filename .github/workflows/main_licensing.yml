@@ -55,4 +55,4 @@ jobs:
           app-name: 'licensing'
           slot-name: 'Production'
           package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4326B47EFEC149D284479B1AEC36254D }}
+          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_CE63C25B796E46F3ABA37AD5FA0039A0 }}

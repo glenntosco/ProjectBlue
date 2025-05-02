@@ -38,3 +38,6 @@ S:\ProjectBlue\CodeBase\P4LicensePortal.Api\obj\Debug\net9.0\refint\P4LicensePor
 S:\ProjectBlue\CodeBase\P4LicensePortal.Api\obj\Debug\net9.0\P4LicensePortal.Api.pdb
 S:\ProjectBlue\CodeBase\P4LicensePortal.Api\obj\Debug\net9.0\P4LicensePortal.Api.genruntimeconfig.cache
 S:\ProjectBlue\CodeBase\P4LicensePortal.Api\obj\Debug\net9.0\ref\P4LicensePortal.Api.dll
+S:\ProjectBlue\CodeBase\P4LicensePortal.Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.Swagger.dll
+S:\ProjectBlue\CodeBase\P4LicensePortal.Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerGen.dll
+S:\ProjectBlue\CodeBase\P4LicensePortal.Api\bin\Debug\net9.0\Swashbuckle.AspNetCore.SwaggerUI.dll

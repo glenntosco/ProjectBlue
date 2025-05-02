@@ -1,76 +1,194 @@
-# P4 Licensing & Partner Management Platform
+# System Architecture – P4 Licensing & Partner Management Platform
 
-This repository contains the complete source code and documentation for the P4 Licensing Platform. This system allows P4 Software and its partners to manage tenant licensing, distributor/reseller control, KYC compliance, and partner branding across a secure multi-tenant SaaS infrastructure.
-
----
-
-## 🔧 Technology Stack
-
-- **Frontend**: Blazor Server (C# 13, .NET 9)
-- **UI**: MudBlazor components
-- **Backend**: API-first using JWT with Ed25519 + AES-256-GCM for license encryption
-- **Database**: Azure SQL per tenant, `P4L_Master` for license registry
-- **Logging**: SQL (critical) + Cosmos DB (micro-logs)
-- **CI/CD**: GitHub Actions → Azure App Services
-- **Billing**: Stripe subscriptions + webhooks
+This document provides a detailed breakdown of the architecture powering the P4 Licensing Platform. It covers the core components, flows, multi-tenant model, licensing logic, partner branding layers, and SaaS provisioning infrastructure. Designed for long-term maintainability and partner extensibility, this architecture enforces high security, auditability, and multi-organization governance.
 
 ---
 
-## 📁 Folder Structure
+## 🧱 High-Level Overview
 
-```
-/Pages            - All main Razor pages (Login, Dashboard, Licenses, etc.)
-/Components       - Shared UI widgets and controls
-/Services         - Interfaces + implementations
-/Controllers      - API logic split by role
-/Models           - Domain entities (License, Partner, Certification, etc.)
-/Reports          - .mrt Stimulsoft reports
-/docs             - Markdown documentation
-```
+- **Platform Type**: Multi-tenant cloud software with per-product licensing.
+- **Primary Interface**: Admin + Partner Portal (Blazor Server).
+- **Persistence**: Azure SQL Server (`P4L_Master` for core, 1 DB per tenant).
+- **Deployment Model**: Azure Web App (separate apps per product).
+- **Authentication**: JWT signed using Ed25519, encrypted with AES-256-GCM.
+- **Billing Logic**: Stripe webhooks triggering license state transitions.
 
 ---
 
-## 📚 Documentation Index
+## 🧩 Core Components
 
-| File                       | Description                                |
-|----------------------------|--------------------------------------------|
-| `docs/Architecture.md`     | Full system design and provisioning flow   |
-| `docs/Copilot_Dev_Guide.md`| Guide for Copilot + modular file creation  |
-| `docs/Branding.md`         | Partner customization and UI branding      |
-| `docs/PartnerDashboard.md` | Metrics + widgets shown to each partner    |
-
-For docs index page: [`docs/index.md`](docs/index.md)
-
----
-
-## 🚀 Getting Started (Local Dev)
-
-1. Clone this repository
-2. Configure `appsettings.json`:
-   - `ConnectionStrings:DefaultConnection`
-   - JWT Key / Signing Key
-3. Launch from Visual Studio 2022+
-4. Default Admin user seeded with:
-   - **Username**: `admin@p4.software`
-   - **Password**: `admin!2025`
+| Component                  | Description                                                                 |
+|----------------------------|-----------------------------------------------------------------------------|
+| `P4L_Master` DB            | Central license registry, partner metadata, user accounts, logs            |
+| `Per-Tenant Databases`     | Provisioned by the licensing platform; used by product SaaS apps           |
+| `Blazor Portal`            | Unified UI for Admins, Distributors, Resellers, and Tenants                |
+| `License Service`          | Core logic for issuing, signing, and encrypting license packages           |
+| `Partner Config Engine`    | Handles branding (logo, theme, footer) per partner                         |
+| `Stripe Webhook Listener`  | Receives billing events to update license state                            |
+| `Stimulsoft Report Engine` | Embedded reporting in portal and partner dashboards                        |
+| `Language Manager`         | JSON-based i18n system with admin-editable text                            |
+| `Azure App Services`       | Hosting for Licensing Portal and each product (P4W, P4B, P4C)               |
+| `GitHub Actions`           | CI/CD deployment pipeline with staging/production environments             |
 
 ---
 
-## 🧠 GitHub Copilot Developers
+## 🧮 Database Structure
 
-If you are using Copilot:
-- Review [`Copilot_Dev_Guide.md`](docs/Copilot_Dev_Guide.md)
-- All services should follow async interface + logging pattern
-- Scaffold Razor pages using the file structure shown above
+### `P4L_Master` – Central License Registry
+
+This database contains:
+
+- `Licenses` – License records (per tenant, per product)
+- `Partners` – Distributor and reseller records
+- `Tenants` – SaaS customer metadata
+- `Users` – Portal login users (role-based)
+- `LoginLogs` – IP logs, country flags, timestamps
+- `MicroLogs` – Cosmos DB-linked minor changes (e.g., theme edits)
+- `StripeSubscriptions` – Stripe subscription metadata
+- `Events` – Internal platform events (e.g., license expiry, webhooks)
+
+> 🔐 Tenant database DSNs are encrypted when stored and signed before delivery.
 
 ---
 
-## 📦 Deployment & Backups
+## 👥 User Roles and UI Modes
 
-- CI/CD via `main → GitHub Actions → Azure App`
-- Automatic backups: 6-hour BACPAC to Azure Blob Cold Storage
-- License verification: offline-capable with embedded Ed25519 signature
+| Role           | Description                                                                       |
+|----------------|-----------------------------------------------------------------------------------|
+| `Admin`        | Full platform access; can impersonate any partner, control all tenants/licenses  |
+| `Distributor`  | Can create resellers, assign license quotas, view white-labeled portal           |
+| `Reseller`     | Can provision tenants from assigned quota; no access to pricing controls         |
+| `TenantUser`   | End-user login for accessing software; typically not exposed to this platform    |
+
+> Role-based menus, dashboard widgets, and branding are dynamically rendered via injected claims.
 
 ---
 
-© 2025 P4 Software / Grupo Barrdega. All rights reserved.
+## 🔄 License Generation Flow
+
+1. **Admin or Partner provisions a new tenant**
+2. Platform generates a **license JSON**:
+   - Product Code (P4W, P4B, P4C)
+   - Expiry, Seats, Language, Region
+   - Tenant Metadata (ID, Alias, PartnerID)
+3. License is **digitally signed** (Ed25519) and **encrypted** (AES-256-GCM)
+4. JSON is stored in `Licenses`, a **PDF license summary** is emailed
+5. Platform **pings the SaaS app endpoint** (e.g., `https://client.p4books.cloud/handshake`)
+6. SaaS app responds to validate the license and provision DB
+
+---
+
+## 🧬 Tenant Provisioning Flow
+
+1. Reseller creates new **Tenant**
+2. System creates:
+   - Tenant DB (`Project_XXXX`)
+   - Two users (readonly + readwrite)
+   - Entry in `Tenants` table
+3. Writes DB DSN and metadata to the target product’s **master DB**
+4. Calls SaaS app `/handshake` endpoint
+5. SaaS app reads license, validates, stores, and completes onboarding
+
+> ⚙️ Product-specific master DBs are `P4Books_Master`, `P4Warehouse_Master`, etc.
+
+---
+
+## 💸 Stripe Billing Integration
+
+- Each Partner or Tenant is linked to a `StripeCustomerId`
+- Subscription changes are triggered via:
+  - Stripe dashboard (manually)
+  - Automated webhook events (`invoice.paid`, `customer.subscription.deleted`)
+- Webhook listener updates:
+  - License status (`Active`, `Expired`, `Suspended`)
+  - Quota enforcement (e.g., seats exceeded)
+- Admin can override billing enforcement for testing or delayed payments
+
+---
+
+## 🌐 Internationalization (i18n)
+
+- JSON files per language (English, Spanish, French, etc.)
+- Admins can:
+  - Add new languages
+  - Edit phrases via Language Manager UI
+  - Set default language per tenant
+- Emails (system-generated) use:
+  - Preferred language only
+  - OR bilingual mode (English + Spanish)
+  - Configurable footer per language
+- UI respects per-user language preferences
+
+---
+
+## 🎨 Partner Branding Layer
+
+Each partner (distributor/reseller) may configure:
+
+- Company Logo
+- Theme Accent Color
+- Email Footer (per language)
+- Custom Stimulsoft Dashboard Widgets
+- Documentation Links (e.g., PDF Guides)
+
+Branding is enforced across:
+
+- Tenant Portal
+- License PDFs
+- Email Templates
+- UI Header/Footer
+
+> All customization is stored per `PartnerId` and injected into the UI via middleware.
+
+---
+
+## 📊 Reporting & Dashboards
+
+- Embedded **Stimulsoft Reports** (.mrt files)
+- Each Partner dashboard includes:
+  - Tenants by Status
+  - Active Licenses
+  - Expiring Soon
+  - Usage Heatmaps
+- Admin dashboards include:
+  - All-partner aggregation
+  - Billing status vs. license usage
+  - Failed webhook alerts
+
+---
+
+## 🔐 Security Architecture
+
+| Mechanism          | Description                                           |
+|--------------------|-------------------------------------------------------|
+| `JWT Tokens`       | Used across API calls; signed with Ed25519            |
+| `AES-256-GCM`      | License payloads encrypted with symmetric key         |
+| `Two-Factor Auth`  | Planned enhancement for Admin + Partner accounts      |
+| `Geo-IP Logging`   | Login IP stored with reverse-lookup country info      |
+| `Audit Trail`      | CosmosDB event capture (e.g., language edits)         |
+| `Role Claims`      | Roles resolved via identity server and token claims   |
+
+---
+
+## ☁️ CI/CD and Environments
+
+- **CI/CD Pipeline**: GitHub Actions → Azure Web App
+- Environments:
+  - `Development` – Local, Rider or VS2022
+  - `Staging` – Internal testing (manual swap)
+  - `Production` – Public SaaS + partner access
+- Backups:
+  - Full P4L_Master BACPAC every 6 hours → Azure Blob Cold
+  - Tenant DB backups handled per-app basis
+
+---
+
+## 🧠 Future Enhancements
+
+- QR code scan-to-validate (rejected, archived design)
+- HardwareKey license locks (planned for OEM devices)
+- AI-powered license usage scoring (planned)
+
+---
+
+© 2025 P4 Software / Grupo Barrdega. Internal use only. Do not redistribute.

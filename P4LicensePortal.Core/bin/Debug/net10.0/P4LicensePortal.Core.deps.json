@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v10.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v10.0": {
+      "P4LicensePortal.Core/1.0.0": {
+        "runtime": {
+          "P4LicensePortal.Core.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "P4LicensePortal.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

@@ -1,8 +1,0 @@
-S:\ProjectBlue\CodeBase\obj\Debug\net7.0\CodeBase.GeneratedMSBuildEditorConfig.editorconfig
-S:\ProjectBlue\CodeBase\obj\Debug\net7.0\CodeBase.AssemblyInfoInputs.cache
-S:\ProjectBlue\CodeBase\obj\Debug\net7.0\CodeBase.AssemblyInfo.cs
-S:\ProjectBlue\CodeBase\obj\Debug\net7.0\CodeBase.csproj.CoreCompileInputs.cache
-S:\ProjectBlue\CodeBase\obj\Debug\net7.0\CodeBase.MvcApplicationPartsAssemblyInfo.cache
-S:\ProjectBlue\CodeBase\obj\Debug\net7.0\CodeBase.RazorAssemblyInfo.cache
-S:\ProjectBlue\CodeBase\obj\Debug\net7.0\CodeBase.RazorAssemblyInfo.cs
-S:\ProjectBlue\CodeBase\obj\Debug\net7.0\CodeBase.sourcelink.json

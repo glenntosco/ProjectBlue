@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "q/zjBXSTbJA=",
+  "success": true,
+  "projectFilePath": "S:\\ProjectBlue\\CodeBase\\P4LicensePortal.Api\\P4LicensePortal.Api.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\GlennTosco\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0-preview.3.25172.1\\microsoft.aspnetcore.openapi.10.0.0-preview.3.25172.1.nupkg.sha512",
+    "C:\\Users\\GlennTosco\\.nuget\\packages\\microsoft.openapi\\2.0.0-preview.11\\microsoft.openapi.2.0.0-preview.11.nupkg.sha512"
+  ],
+  "logs": []
+}

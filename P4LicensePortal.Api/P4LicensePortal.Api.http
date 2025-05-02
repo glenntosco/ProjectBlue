@@ -1,0 +1,6 @@
+@P4LicensePortal.Api_HostAddress = http://localhost:5043
+
+GET {{P4LicensePortal.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

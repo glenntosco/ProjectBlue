@@ -1,0 +1,16 @@
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\bin\Debug\net9.0\P4LicensePortal.Data.deps.json
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\bin\Debug\net9.0\P4LicensePortal.Data.dll
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\bin\Debug\net9.0\P4LicensePortal.Data.pdb
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\bin\Debug\net9.0\P4LicensePortal.Core.dll
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\bin\Debug\net9.0\P4LicensePortal.Core.pdb
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\obj\Debug\net9.0\P4LicensePortal.Data.csproj.AssemblyReference.cache
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\obj\Debug\net9.0\P4LicensePortal.Data.GeneratedMSBuildEditorConfig.editorconfig
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\obj\Debug\net9.0\P4LicensePortal.Data.AssemblyInfoInputs.cache
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\obj\Debug\net9.0\P4LicensePortal.Data.AssemblyInfo.cs
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\obj\Debug\net9.0\P4LicensePortal.Data.csproj.CoreCompileInputs.cache
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\obj\Debug\net9.0\P4LicensePortal.Data.sourcelink.json
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\obj\Debug\net9.0\P4Licens.F00FBFF0.Up2Date
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\obj\Debug\net9.0\P4LicensePortal.Data.dll
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\obj\Debug\net9.0\refint\P4LicensePortal.Data.dll
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\obj\Debug\net9.0\P4LicensePortal.Data.pdb
+S:\ProjectBlue\CodeBase\P4LicensePortal.Data\obj\Debug\net9.0\ref\P4LicensePortal.Data.dll

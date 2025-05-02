@@ -1,0 +1,39 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v9.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v9.0": {
+      "P4LicensePortal.Data/1.0.0": {
+        "dependencies": {
+          "P4LicensePortal.Core": "1.0.0"
+        },
+        "runtime": {
+          "P4LicensePortal.Data.dll": {}
+        }
+      },
+      "P4LicensePortal.Core/1.0.0": {
+        "runtime": {
+          "P4LicensePortal.Core.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "P4LicensePortal.Data/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "P4LicensePortal.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

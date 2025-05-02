@@ -1,0 +1,12 @@
+{
+  "Version": 1,
+  "Hash": "h8X31v92soXnR6jZOEb8aqMMZ0v/Bh4vKkcF3wC9MqY=",
+  "Source": "P4LicensePortal.Api",
+  "BasePath": "_content/P4LicensePortal.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": [],
+  "Endpoints": []
+}

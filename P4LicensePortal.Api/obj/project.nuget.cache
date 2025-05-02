@@ -1,11 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "q/zjBXSTbJA=",
+  "dgSpecHash": "gn1WflUBYlw=",
   "success": true,
   "projectFilePath": "S:\\ProjectBlue\\CodeBase\\P4LicensePortal.Api\\P4LicensePortal.Api.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\GlennTosco\\.nuget\\packages\\microsoft.aspnetcore.openapi\\10.0.0-preview.3.25172.1\\microsoft.aspnetcore.openapi.10.0.0-preview.3.25172.1.nupkg.sha512",
-    "C:\\Users\\GlennTosco\\.nuget\\packages\\microsoft.openapi\\2.0.0-preview.11\\microsoft.openapi.2.0.0-preview.11.nupkg.sha512"
+    "C:\\Users\\GlennTosco\\.nuget\\packages\\microsoft.openapi\\2.0.0-preview.11\\microsoft.openapi.2.0.0-preview.11.nupkg.sha512",
+    "C:\\Users\\GlennTosco\\.nuget\\packages\\system.text.encodings.web\\8.0.0\\system.text.encodings.web.8.0.0.nupkg.sha512",
+    "C:\\Users\\GlennTosco\\.nuget\\packages\\system.text.json\\8.0.0\\system.text.json.8.0.0.nupkg.sha512"
   ],
   "logs": []
 }

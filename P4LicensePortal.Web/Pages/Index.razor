@@ -4,88 +4,179 @@
 
 <PageTitle>P4 Licensing Platform - Developer Portal</PageTitle>
 
-<MudContainer MaxWidth="MaxWidth.Large" Class="mt-8">
-    <MudPaper Elevation="4" Class="pa-8" Style="background: linear-gradient(135deg, var(--mud-palette-background) 0%, var(--mud-palette-primary-hover) 100%);">
-        <MudGrid>
-            <MudItem xs="12" md="6" Class="d-flex flex-column justify-center">
-                <MudStack Spacing="4">
-                    <MudImage Src="images/p4-logo.svg" Alt="P4 Software Logo" Width="220" Height="140" 
-                             ObjectFit="ObjectFit.Contain" 
-                             ObjectPosition="ObjectPosition.Center" />
-                    
-                    <MudText Typo="Typo.h2" Color="Color.Primary" Style="font-weight: 700;">
-                        P4 Licensing Platform <MudChip T="string" Color="Color.Secondary" Size="Size.Small">DEVELOPER</MudChip>
-                    </MudText>
-                    
-                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-4">
-                        Multi-tenant license management and partner portal built with Blazor & MudBlazor
-                    </MudText>
-                    
-                    <MudStack Row="true" Spacing="2" Class="my-4">
-                        <MudChip T="string" Icon="@Icons.Material.Filled.Code" Color="Color.Primary" Size="Size.Medium">
-                            .NET 9.0
-                        </MudChip>
-                        <MudChip T="string" Icon="@Icons.Material.Filled.DataObject" Color="Color.Info" Size="Size.Medium">
-                            Azure SQL
-                        </MudChip>
-                        <MudChip T="string" Icon="@Icons.Material.Filled.Cloud" Color="Color.Success" Size="Size.Medium">
-                            CI/CD Enabled
-                        </MudChip>
+<div class="splash-background">
+    <MudContainer MaxWidth="MaxWidth.Large" Class="py-12">
+        <MudPaper Elevation="24" Class="rounded-lg overflow-hidden">
+            <MudGrid>
+                <!-- Header Section with Gradient -->
+                <MudItem xs="12" Class="py-8 px-6" Style="background: linear-gradient(135deg, #1E88E5 0%, #0D47A1 100%);">
+                    <MudStack AlignItems="AlignItems.Center" Spacing="0">
+                        <MudImage Src="images/p4-logo.svg" Alt="P4 Software Logo" Width="200" Height="130" 
+                                 ObjectFit="ObjectFit.Contain" 
+                                 ObjectPosition="ObjectPosition.Center" />
+                        
+                        <MudText Typo="Typo.h2" Color="Color.Surface" Class="mt-6 text-center" Style="font-weight: 500; letter-spacing: -0.5px;">
+                            P4 Licensing Platform 
+                        </MudText>
+                        
+                        <MudChip T="string" Color="Color.Secondary" Size="Size.Small" Class="mt-2">DEVELOPER PORTAL</MudChip>
+                        
+                        <MudText Typo="Typo.subtitle1" Color="Color.Surface" Class="mt-3 text-center opacity-90">
+                            Multi-tenant license management and partner portal
+                        </MudText>
                     </MudStack>
-                    
-                    <MudText Typo="Typo.body2" Class="mud-text-disabled mt-2">
+                </MudItem>
+                
+                <!-- Main Content -->
+                <MudItem xs="12" md="6" Class="pa-6">
+                    <div class="d-flex flex-column h-100">
+                        <MudPaper Elevation="0" Class="pa-4 rounded-lg flex-grow-1" Style="background-color: rgba(30,136,229,0.08);">
+                            <MudText Typo="Typo.h5" Color="Color.Primary" Class="mb-4 d-flex align-center gap-2">
+                                <MudIcon Icon="@Icons.Material.Filled.Build" Size="Size.Medium" /> Developer Tools
+                            </MudText>
+                            
+                            <MudList T="string" Dense="true" Class="rounded-lg">
+                                <MudListItem T="string" Icon="@Icons.Material.Filled.Architecture" Class="pa-3 mb-2" Style="background-color: rgba(255,255,255,0.5); border-radius: 8px;">
+                                    <div>
+                                        <MudText Typo="Typo.body1" Style="font-weight: 500;">Architecture Documentation</MudText>
+                                        <MudText Typo="Typo.caption">System design & data flow models</MudText>
+                                    </div>
+                                </MudListItem>
+                                <MudListItem T="string" Icon="@Icons.Material.Filled.Api" Class="pa-3 mb-2" Style="background-color: rgba(255,255,255,0.5); border-radius: 8px;">
+                                    <div>
+                                        <MudText Typo="Typo.body1" Style="font-weight: 500;">API Endpoints</MudText>
+                                        <MudText Typo="Typo.caption">Swagger UI accessible at /swagger</MudText>
+                                    </div>
+                                </MudListItem>
+                                <MudListItem T="string" Icon="@Icons.Material.Filled.Storage" Class="pa-3 mb-2" Style="background-color: rgba(255,255,255,0.5); border-radius: 8px;">
+                                    <div>
+                                        <MudText Typo="Typo.body1" Style="font-weight: 500;">Database Schema</MudText>
+                                        <MudText Typo="Typo.caption">EntityFramework Core migrations ready</MudText>
+                                    </div>
+                                </MudListItem>
+                                <MudListItem T="string" Icon="@Icons.Material.Filled.Security" Class="pa-3" Style="background-color: rgba(255,255,255,0.5); border-radius: 8px;">
+                                    <div>
+                                        <MudText Typo="Typo.body1" Style="font-weight: 500;">Authentication System</MudText>
+                                        <MudText Typo="Typo.caption">JWT w/ Ed25519 signing & AES-256-GCM encryption</MudText>
+                                    </div>
+                                </MudListItem>
+                            </MudList>
+                        </MudPaper>
+                    </div>
+                </MudItem>
+                
+                <MudItem xs="12" md="6" Class="pa-6">
+                    <MudStack Spacing="4">
+                        <!-- Technology Stack -->
+                        <MudPaper Elevation="0" Class="pa-4 rounded-lg" Style="background-color: rgba(30,136,229,0.04);">
+                            <MudText Typo="Typo.h6" Color="Color.Primary" Class="mb-3 d-flex align-center gap-2">
+                                <MudIcon Icon="@Icons.Material.Filled.Layers" Size="Size.Small" /> Technology Stack
+                            </MudText>
+                            
+                            <MudGrid Spacing="2">
+                                <MudItem xs="6">
+                                    <MudPaper Elevation="0" Class="pa-3 d-flex align-center gap-2 rounded-lg" Style="background-color: rgba(255,255,255,0.5);">
+                                        <MudIcon Icon="@Icons.Material.Filled.Code" Color="Color.Primary" />
+                                        <div>
+                                            <MudText Typo="Typo.body2" Style="font-weight: 500;">.NET 9.0</MudText>
+                                            <MudText Typo="Typo.caption">Core Framework</MudText>
+                                        </div>
+                                    </MudPaper>
+                                </MudItem>
+                                <MudItem xs="6">
+                                    <MudPaper Elevation="0" Class="pa-3 d-flex align-center gap-2 rounded-lg" Style="background-color: rgba(255,255,255,0.5);">
+                                        <MudIcon Icon="@Icons.Material.Filled.Web" Color="Color.Secondary" />
+                                        <div>
+                                            <MudText Typo="Typo.body2" Style="font-weight: 500;">Blazor Server</MudText>
+                                            <MudText Typo="Typo.caption">Web Framework</MudText>
+                                        </div>
+                                    </MudPaper>
+                                </MudItem>
+                                <MudItem xs="6">
+                                    <MudPaper Elevation="0" Class="pa-3 d-flex align-center gap-2 rounded-lg" Style="background-color: rgba(255,255,255,0.5);">
+                                        <MudIcon Icon="@Icons.Material.Filled.DataObject" Color="Color.Info" />
+                                        <div>
+                                            <MudText Typo="Typo.body2" Style="font-weight: 500;">Azure SQL</MudText>
+                                            <MudText Typo="Typo.caption">Database</MudText>
+                                        </div>
+                                    </MudPaper>
+                                </MudItem>
+                                <MudItem xs="6">
+                                    <MudPaper Elevation="0" Class="pa-3 d-flex align-center gap-2 rounded-lg" Style="background-color: rgba(255,255,255,0.5);">
+                                        <MudIcon Icon="@Icons.Material.Filled.Cloud" Color="Color.Success" />
+                                        <div>
+                                            <MudText Typo="Typo.body2" Style="font-weight: 500;">Azure</MudText>
+                                            <MudText Typo="Typo.caption">Cloud Platform</MudText>
+                                        </div>
+                                    </MudPaper>
+                                </MudItem>
+                            </MudGrid>
+                        </MudPaper>
+                        
+                        <!-- Development Progress -->
+                        <MudPaper Elevation="0" Class="pa-4 rounded-lg" Style="background-color: rgba(30,136,229,0.04);">
+                            <MudText Typo="Typo.subtitle1" Color="Color.Warning" Class="mb-2 d-flex align-center gap-2">
+                                <MudIcon Icon="@Icons.Material.Filled.Construction" Size="Size.Small" /> Development Progress
+                            </MudText>
+                            
+                            <MudProgressLinear Color="Color.Warning" Value="60" Size="Size.Small" Class="my-2" />
+                            
+                            <MudStack Spacing="2" Class="mt-3">
+                                <MudText Typo="Typo.body2">
+                                    <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Size="Size.Small" Color="Color.Success" Class="mr-2" />
+                                    Core platform architecture
+                                </MudText>
+                                <MudText Typo="Typo.body2">
+                                    <MudIcon Icon="@Icons.Material.Filled.CheckCircle" Size="Size.Small" Color="Color.Success" Class="mr-2" />
+                                    Authentication & authorization system
+                                </MudText>
+                                <MudText Typo="Typo.body2">
+                                    <MudIcon Icon="@Icons.Material.Filled.Pending" Size="Size.Small" Color="Color.Warning" Class="mr-2" />
+                                    Partner branding system in progress
+                                </MudText>
+                                <MudText Typo="Typo.body2">
+                                    <MudIcon Icon="@Icons.Material.Filled.Pending" Size="Size.Small" Color="Color.Warning" Class="mr-2" />
+                                    Stripe subscription webhooks
+                                </MudText>
+                            </MudStack>
+                        </MudPaper>
+                    </MudStack>
+                </MudItem>
+                
+                <!-- Footer -->
+                <MudItem xs="12" Class="pa-4 d-flex justify-space-between align-center" Style="background-color: rgba(0,0,0,0.03); border-top: 1px solid rgba(0,0,0,0.08);">
+                    <MudText Typo="Typo.body2" Color="Color.Primary">
                         Version @GetAppVersion() • <MudIcon Icon="@Icons.Material.Filled.Circle" Size="Size.Small" Color="Color.Success" /> Development Environment
                     </MudText>
-                </MudStack>
-            </MudItem>
-            
-            <MudItem xs="12" md="6">
-                <MudPaper Elevation="0" Class="pa-4" Style="background-color: rgba(255,255,255,0.05);">
-                    <MudText Typo="Typo.h5" Color="Color.Primary" Class="mb-4">Developer Tools</MudText>
                     
-                    <MudList T="string" Dense="true">
-                        <MudListItem T="string" Icon="@Icons.Material.Filled.Architecture">
-                            <MudText Typo="Typo.body1">Architecture Documentation</MudText>
-                            <MudText Typo="Typo.caption">System design & data flow models</MudText>
-                        </MudListItem>
-                        <MudListItem T="string" Icon="@Icons.Material.Filled.Api">
-                            <MudText Typo="Typo.body1">API Endpoints</MudText>
-                            <MudText Typo="Typo.caption">Swagger UI accessible at /swagger</MudText>
-                        </MudListItem>
-                        <MudListItem T="string" Icon="@Icons.Material.Filled.Storage">
-                            <MudText Typo="Typo.body1">Database Schema</MudText>
-                            <MudText Typo="Typo.caption">EntityFramework Core migrations ready</MudText>
-                        </MudListItem>
-                        <MudListItem T="string" Icon="@Icons.Material.Filled.Security">
-                            <MudText Typo="Typo.body1">Authentication System</MudText>
-                            <MudText Typo="Typo.caption">JWT w/ Ed25519 signing & AES-256-GCM encryption</MudText>
-                        </MudListItem>
-                    </MudList>
-                    
-                    <MudDivider Class="my-4" />
-                    
-                    <MudText Typo="Typo.subtitle2" Color="Color.Warning" Class="mb-2">Features In Progress:</MudText>
-                    <MudProgressLinear Color="Color.Warning" Value="60" Class="my-2" />
-                    <MudText Typo="Typo.body2" Class="mt-2">
-                        Multi-tenant provisioning, crypto-signed license generation, partner branding system, 
-                        and Stripe subscription webhooks are currently under active development.
-                    </MudText>
-                </MudPaper>
-            </MudItem>
-        </MudGrid>
-    </MudPaper>
-    
-    <MudPaper Elevation="0" Class="mt-6 pa-4 d-flex justify-space-between align-center">
-        <MudText Typo="Typo.body2" Class="mud-text-secondary">
-            <MudIcon Icon="@Icons.Material.Filled.Info" Size="Size.Small" Class="mr-2" />
-            This environment is for development purposes only. Not for production use.
-        </MudText>
+                    <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Terminal" Size="Size.Small">
+                        Launch Console
+                    </MudButton>
+                </MudItem>
+            </MudGrid>
+        </MudPaper>
         
-        <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Terminal" Size="Size.Small">
-            Launch Dev Console
-        </MudButton>
-    </MudPaper>
-</MudContainer>
+        <MudText Align="Align.Center" Typo="Typo.caption" Class="mt-4 mud-text-secondary">
+            © 2025 P4 Software / Grupo Barrdega. For development use only.
+        </MudText>
+    </MudContainer>
+</div>
+
+<style>
+    .splash-background {
+        min-height: 100vh;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e4ecf7 100%);
+        padding: 1rem 0;
+    }
+    
+    .rounded-lg {
+        border-radius: 8px;
+    }
+    
+    .opacity-90 {
+        opacity: 0.9;
+    }
+</style>
 
 @code {
     private string GetAppVersion()

@@ -8,7 +8,7 @@ This document provides a detailed breakdown of the architecture powering the P4 
 
 - **Platform Type**: Multi-tenant cloud software with per-product licensing.
 - **Primary Interface**: Admin + Partner Portal (Blazor Server).
-- **Persistence**: Azure SQL Server (`P4L_Master` for core, 1 DB per tenant).
+- **Persistence**: Azure SQL Server (`P4L_Master` ).
 - **Deployment Model**: Azure Web App (separate apps per product).
 - **Authentication**: JWT signed using Ed25519, encrypted with AES-256-GCM.
 - **Billing Logic**: Stripe webhooks triggering license state transitions.
@@ -34,7 +34,7 @@ This document provides a detailed breakdown of the architecture powering the P4 
 
 ## 🧮 Database Structure
 
-### `P4L_Master` – Central License Registry
+### `ProjectBlueDev` – Central License Registry
 
 This database contains:
 

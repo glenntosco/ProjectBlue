@@ -24,7 +24,7 @@ This documentation is designed to support developers, partners, and contributors
 
 ## 🧠 Who Should Read This
 
-- GitHub Copilot users building Razor + C# modules
+- JetBrains  users building Razor + C# modules
 - Internal P4 Software developers integrating new features
 - Partners branding the UI or configuring language settings
 - Contributors customizing Stripe tiers, provisioning flows, or audit tools
@@ -34,7 +34,7 @@ This documentation is designed to support developers, partners, and contributors
 ## 🛠️ System Notes
 
 - All source code is Blazor Server (.NET 9, MudBlazor)
-- Database is Azure SQL per tenant, with `P4L_Master` for license registry
+- Database is Azure SQL per tenant, with `ProjectBlueDev` for license registry development db, production db is ProjectBlue
 - CI/CD via GitHub Actions to Azure Web App
 - Cosmos DB used for low-cost micro-logging
 

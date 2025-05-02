@@ -21,14 +21,13 @@ This document details the full local development setup for the P4 Licensing Plat
 ## 📂 Project Structure
 
 ```
-/LicensingPlatform.sln
-/src
-├── ProjectBlue.Server           # Blazor Server frontend and UI
-├── ProjectBlue.Shared           # DTOs, constants, enums, i18n
-├── ProjectBlue.Infrastructure   # EF Core DbContext, services, migrations
-├── ProjectBlue.Licensing        # AES encryption, Ed25519 signing, license IO
-/docs                            # Developer documentation
-/.github/workflows               # GitHub Actions CI/CD pipelines
+P4LicensePortal/
+├── P4LicensePortal.Api // Web API endpoints (REST)
+├── P4LicensePortal.Core // Interfaces, Enums, DTOs
+├── P4LicensePortal.Data // EF Core models and DbContext
+├── P4LicensePortal.Services // Service implementations
+└── P4LicensePortal.Web // Blazor Server UI (Razor Pages, Components)
+/docs
 ```
 
 ---
@@ -50,10 +49,7 @@ This document details the full local development setup for the P4 Licensing Plat
 
 ### 1. Clone the Repository
 
-```bash
-git clone https://github.com/glenntosco/ProjectBlue.git
-cd P4LicenseServer
-```
+
 
 ### 2. Create the Central Database (if needed)
 

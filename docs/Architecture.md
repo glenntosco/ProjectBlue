@@ -11,7 +11,7 @@ Each tenant (client) is provisioned with:
 - A license signed with Ed25519 and encrypted using AES-256-GCM
 - A DNS-routed subdomain like `clientname.p4books.cloud`
 
-Tenant records are managed globally in the `ProjectBlueDev` database, including:
+Tenant records are managed globally in the `ProjectBlueDev` dev database, including:
 - Tenant metadata
 - Associated subscription and license data
 - Partner affiliations and role permissions

@@ -15,6 +15,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9ab1c98-939c-4a98-bcb6-57f40b07b895" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.P4LicensePortal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.P4LicensePortal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.AssemblyInfo.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/Architecture.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Architecture.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docs/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/setup.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -65,6 +85,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.tabs",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -254,7 +275,8 @@
       <option name="presentableId" value="Default" />
       <updated>1746195293330</updated>
       <workItem from="1746195294557" duration="1374000" />
-      <workItem from="1746197177111" duration="5638000" />
+      <workItem from="1746197177111" duration="7033000" />
+      <workItem from="1746210742983" duration="2119000" />
     </task>
     <servers />
   </component>

@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Web;
 using Microsoft.AspNetCore.HttpOverrides;
+using MudBlazor.Services;
 using P4LicensePortal.Web.Data;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -9,6 +10,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
 builder.Services.AddSingleton<WeatherForecastService>();
+
+// Add MudBlazor services
+builder.Services.AddMudServices();
 
 // Configure forwarded headers for Azure
 builder.Services.Configure<ForwardedHeadersOptions>(options =>

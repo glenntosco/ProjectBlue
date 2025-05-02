@@ -15,27 +15,104 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9ab1c98-939c-4a98-bcb6-57f40b07b895" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/P4LicensePortal.Web/Pages/_Layout.cshtml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.P4LicensePortal/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.P4LicensePortal/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Api.exe" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Api.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Services.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/bin/Debug/net9.0/P4LicensePortal.Services.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/P4LicensePortal.Api.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/ref/P4LicensePortal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/ref/P4LicensePortal.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/refint/P4LicensePortal.Api.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/Debug/net9.0/refint/P4LicensePortal.Api.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Api/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Api/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/bin/Debug/net9.0/P4LicensePortal.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/bin/Debug/net9.0/P4LicensePortal.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/bin/Debug/net9.0/P4LicensePortal.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/bin/Debug/net9.0/P4LicensePortal.Core.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/P4LicensePortal.Core.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/ref/P4LicensePortal.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/ref/P4LicensePortal.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/refint/P4LicensePortal.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/Debug/net9.0/refint/P4LicensePortal.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Core/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Core/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/bin/Debug/net9.0/P4LicensePortal.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/bin/Debug/net9.0/P4LicensePortal.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/bin/Debug/net9.0/P4LicensePortal.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/bin/Debug/net9.0/P4LicensePortal.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/bin/Debug/net9.0/P4LicensePortal.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/bin/Debug/net9.0/P4LicensePortal.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/bin/Debug/net9.0/P4LicensePortal.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/bin/Debug/net9.0/P4LicensePortal.Data.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/rider.project.model.nuget.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/P4LicensePortal.Data.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/ref/P4LicensePortal.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/ref/P4LicensePortal.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/refint/P4LicensePortal.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/Debug/net9.0/refint/P4LicensePortal.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Data/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Data/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Core.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Core.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Core.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Core.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Data.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Data.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Data.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Data.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Services.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/bin/Debug/net9.0/P4LicensePortal.Services.pdb" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.AssemblyInfoInputs.cache" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.csproj.AssemblyReference.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.csproj.AssemblyReference.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/P4LicensePortal.Services.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/ref/P4LicensePortal.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/ref/P4LicensePortal.Services.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/refint/P4LicensePortal.Services.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/Debug/net9.0/refint/P4LicensePortal.Services.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Services/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Services/obj/rider.project.restore.info" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/P4LicensePortal.Web.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/P4LicensePortal.Web.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/Pages/Index.razor" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/Pages/Index.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/Pages/_Host.cshtml" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/Pages/_Host.cshtml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/Shared/MainLayout.razor" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/Shared/MainLayout.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/Shared/NavMenu.razor" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/Shared/NavMenu.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/_Imports.razor" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/_Imports.razor" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.deps.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.deps.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.exe" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.staticwebassets.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.staticwebassets.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.staticwebassets.runtime.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/P4LicensePortal.Web.staticwebassets.runtime.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/bin/Debug/net9.0/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.AssemblyInfo.cs" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.AssemblyInfo.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.AssemblyInfoInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.AssemblyInfoInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.GeneratedMSBuildEditorConfig.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.GeneratedMSBuildEditorConfig.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.assets.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.assets.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.csproj.CoreCompileInputs.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.csproj.CoreCompileInputs.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.csproj.FileListAbsolute.txt" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.csproj.FileListAbsolute.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.pdb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.sourcelink.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/P4LicensePortal.Web.sourcelink.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/apphost.exe" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/apphost.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/ref/P4LicensePortal.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/ref/P4LicensePortal.Web.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/refint/P4LicensePortal.Web.dll" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/refint/P4LicensePortal.Web.dll" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/staticwebassets.build.endpoints.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/staticwebassets.build.endpoints.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/staticwebassets.build.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/staticwebassets.build.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/staticwebassets.development.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/staticwebassets.development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/staticwebassets/msbuild.P4LicensePortal.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/Debug/net9.0/staticwebassets/msbuild.P4LicensePortal.Web.Microsoft.AspNetCore.StaticWebAssetEndpoints.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/P4LicensePortal.Web.csproj.nuget.dgspec.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/P4LicensePortal.Web.csproj.nuget.dgspec.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/P4LicensePortal.Web.csproj.nuget.g.props" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/P4LicensePortal.Web.csproj.nuget.g.props" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/P4LicensePortal.Web.csproj.nuget.g.targets" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/P4LicensePortal.Web.csproj.nuget.g.targets" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/project.assets.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/project.assets.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/project.nuget.cache" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/project.nuget.cache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/project.packagespec.json" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/project.packagespec.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/rider.project.model.nuget.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/rider.project.model.nuget.info" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/Architecture.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/Architecture.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/index.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/setup.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/setup.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/P4LicensePortal.Web/obj/rider.project.restore.info" beforeDir="false" afterPath="$PROJECT_DIR$/P4LicensePortal.Web/obj/rider.project.restore.info" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,6 +137,12 @@
     &quot;accountId&quot;: &quot;bd46a92f-5a27-467e-8f5b-2f9daea1a789&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///AIAssistantSnippet.." root0="SKIP_HIGHLIGHTING" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
 }</component>
@@ -89,7 +172,7 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Multi-Launch.Multi-Launch: P4LicensePortal">
+  <component name="RunManager" selected=".NET Launch Settings Profile.P4LicensePortal.Web: http">
     <configuration name="CodeBase: IIS Express" type="LaunchSettings" factoryName=".NET Launch Settings Profile">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/CodeBase.csproj" />
       <option name="LAUNCH_PROFILE_TFM" value="net9.0" />
@@ -276,7 +359,7 @@
       <updated>1746195293330</updated>
       <workItem from="1746195294557" duration="1374000" />
       <workItem from="1746197177111" duration="7033000" />
-      <workItem from="1746210742983" duration="2119000" />
+      <workItem from="1746210742983" duration="3136000" />
     </task>
     <servers />
   </component>

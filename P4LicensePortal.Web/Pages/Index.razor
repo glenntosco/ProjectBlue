@@ -1,33 +1,37 @@
 ﻿@page "/"
+@using Microsoft.AspNetCore.Components.Web
 
-<div class="splash-container">
-    <img src="images/p4-logo.svg" class="logo" />
-    <h1>P4 Licensing Platform</h1>
-    <p class="tagline">Deployment Successful via GitHub Actions → Azure Web App</p>
-    <p class="note">This is a temporary splash page. Development in progress.</p>
-</div>
+<PageTitle>P4 Licensing & Partner Management Platform</PageTitle>
 
-<style>
-    .splash-container {
-        text-align: center;
-        padding-top: 15vh;
-        font-family: 'Segoe UI', sans-serif;
-    }
-    .logo {
-        height: 100px;
-        margin-bottom: 20px;
-    }
-    h1 {
-        font-size: 2.5rem;
-        color: #0f059e;
-    }
-    .tagline {
-        font-size: 1.2rem;
-        color: #555;
-    }
-    .note {
-        margin-top: 40px;
-        font-size: 0.9rem;
-        color: #888;
-    }
-</style>
+<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-16">
+    <MudPaper Elevation="3" Class="pa-8 mud-text-align-center">
+        <MudStack AlignItems="AlignItems.Center" Spacing="4">
+            <MudImage Src="images/p4-logo.svg" Alt="P4 Software Logo" Width="180" Height="120" 
+                     ObjectFit="ObjectFit.Contain" 
+                                 ObjectPosition="ObjectPosition.Center" />
+            
+            <MudText Typo="Typo.h2" Color="Color.Primary" Class="mt-4">P4 Licensing Platform</MudText>
+            
+            <MudDivider Class="my-4" />
+            
+            <MudText Typo="Typo.body1" Class="mud-text-secondary mb-4">
+                Multi-tenant license management and partner portal
+            </MudText>
+            
+            <MudChip T="string" Icon="@Icons.Material.Filled.Cloud" Color="Color.Success" Size="Size.Large">
+                Deployment Successful
+            </MudChip>
+            
+            <MudText Typo="Typo.caption" Class="mud-text-disabled mt-4">
+                Version 1.0.0 • Development in Progress
+            </MudText>
+            
+            <MudPaper Elevation="0" Class="mt-8 pa-4 mud-background-gray mud-width-full">
+                <MudText Typo="Typo.body2" Class="mud-text-secondary">
+                    <MudIcon Icon="@Icons.Material.Filled.Info" Size="Size.Small" Class="mr-2" />
+                    This splash page confirms successful deployment of the P4 Licensing Platform via GitHub Actions to Azure App Service.
+                </MudText>
+            </MudPaper>
+        </MudStack>
+    </MudPaper>
+</MudContainer>

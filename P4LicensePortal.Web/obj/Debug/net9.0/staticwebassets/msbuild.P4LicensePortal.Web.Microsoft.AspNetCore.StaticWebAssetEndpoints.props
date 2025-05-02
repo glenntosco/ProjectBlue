@@ -184,13 +184,13 @@
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\p4-logo.svg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Fj//6jNJveBB5EiJbd8nXuW/3QFgPCsZsXdOEuYbvSo="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"21821"},{"Name":"Content-Type","Value":"image/svg\u002Bxml"},{"Name":"ETag","Value":"\u0022Fj//6jNJveBB5EiJbd8nXuW/3QFgPCsZsXdOEuYbvSo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 08:59:48 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"21821"},{"Name":"Content-Type","Value":"image/svg\u002Bxml"},{"Name":"ETag","Value":"\u0022Fj//6jNJveBB5EiJbd8nXuW/3QFgPCsZsXdOEuYbvSo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 19:22:21 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/P4LicensePortal.Web/images/p4-logo.uij94ohq8m.svg">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\images\p4-logo.svg'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"uij94ohq8m"},{"Name":"integrity","Value":"sha256-Fj//6jNJveBB5EiJbd8nXuW/3QFgPCsZsXdOEuYbvSo="},{"Name":"label","Value":"_content/P4LicensePortal.Web/images/p4-logo.svg"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"21821"},{"Name":"Content-Type","Value":"image/svg\u002Bxml"},{"Name":"ETag","Value":"\u0022Fj//6jNJveBB5EiJbd8nXuW/3QFgPCsZsXdOEuYbvSo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 08:59:48 GMT"}]]]></ResponseHeaders>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"21821"},{"Name":"Content-Type","Value":"image/svg\u002Bxml"},{"Name":"ETag","Value":"\u0022Fj//6jNJveBB5EiJbd8nXuW/3QFgPCsZsXdOEuYbvSo=\u0022"},{"Name":"Last-Modified","Value":"Fri, 02 May 2025 19:22:21 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/P4LicensePortal.Web/P4LicensePortal.Web.4frm1cbjf8.bundle.scp.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\P4LicensePortal.Web.4frm1cbjf8.bundle.scp.css'))</AssetFile>

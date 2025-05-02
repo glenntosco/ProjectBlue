@@ -1,37 +1,96 @@
 ﻿@page "/"
 @using Microsoft.AspNetCore.Components.Web
+@using System.Reflection
 
-<PageTitle>P4 Licensing & Partner Management Platform</PageTitle>
+<PageTitle>P4 Licensing Platform - Developer Portal</PageTitle>
 
-<MudContainer MaxWidth="MaxWidth.Medium" Class="mt-16">
-    <MudPaper Elevation="3" Class="pa-8 mud-text-align-center">
-        <MudStack AlignItems="AlignItems.Center" Spacing="4">
-            <MudImage Src="images/p4-logo.svg" Alt="P4 Software Logo" Width="180" Height="120" 
-                     ObjectFit="ObjectFit.Contain" 
-                                 ObjectPosition="ObjectPosition.Center" />
+<MudContainer MaxWidth="MaxWidth.Large" Class="mt-8">
+    <MudPaper Elevation="4" Class="pa-8" Style="background: linear-gradient(135deg, var(--mud-palette-background) 0%, var(--mud-palette-primary-hover) 100%);">
+        <MudGrid>
+            <MudItem xs="12" md="6" Class="d-flex flex-column justify-center">
+                <MudStack Spacing="4">
+                    <MudImage Src="images/p4-logo.svg" Alt="P4 Software Logo" Width="220" Height="140" 
+                             ObjectFit="ObjectFit.Contain" 
+                             ObjectPosition="ObjectPosition.Center" />
+                    
+                    <MudText Typo="Typo.h2" Color="Color.Primary" Style="font-weight: 700;">
+                        P4 Licensing Platform <MudChip T="string" Color="Color.Secondary" Size="Size.Small">DEVELOPER</MudChip>
+                    </MudText>
+                    
+                    <MudText Typo="Typo.subtitle1" Class="mud-text-secondary mb-4">
+                        Multi-tenant license management and partner portal built with Blazor & MudBlazor
+                    </MudText>
+                    
+                    <MudStack Row="true" Spacing="2" Class="my-4">
+                        <MudChip T="string" Icon="@Icons.Material.Filled.Code" Color="Color.Primary" Size="Size.Medium">
+                            .NET 9.0
+                        </MudChip>
+                        <MudChip T="string" Icon="@Icons.Material.Filled.DataObject" Color="Color.Info" Size="Size.Medium">
+                            Azure SQL
+                        </MudChip>
+                        <MudChip T="string" Icon="@Icons.Material.Filled.Cloud" Color="Color.Success" Size="Size.Medium">
+                            CI/CD Enabled
+                        </MudChip>
+                    </MudStack>
+                    
+                    <MudText Typo="Typo.body2" Class="mud-text-disabled mt-2">
+                        Version @GetAppVersion() • <MudIcon Icon="@Icons.Material.Filled.Circle" Size="Size.Small" Color="Color.Success" /> Development Environment
+                    </MudText>
+                </MudStack>
+            </MudItem>
             
-            <MudText Typo="Typo.h2" Color="Color.Primary" Class="mt-4">P4 Licensing Platform</MudText>
-            
-            <MudDivider Class="my-4" />
-            
-            <MudText Typo="Typo.body1" Class="mud-text-secondary mb-4">
-                Multi-tenant license management and partner portal
-            </MudText>
-            
-            <MudChip T="string" Icon="@Icons.Material.Filled.Cloud" Color="Color.Success" Size="Size.Large">
-                Deployment Successful
-            </MudChip>
-            
-            <MudText Typo="Typo.caption" Class="mud-text-disabled mt-4">
-                Version 1.0.0 • Development in Progress
-            </MudText>
-            
-            <MudPaper Elevation="0" Class="mt-8 pa-4 mud-background-gray mud-width-full">
-                <MudText Typo="Typo.body2" Class="mud-text-secondary">
-                    <MudIcon Icon="@Icons.Material.Filled.Info" Size="Size.Small" Class="mr-2" />
-                    This splash page confirms successful deployment of the P4 Licensing Platform via GitHub Actions to Azure App Service.
-                </MudText>
-            </MudPaper>
-        </MudStack>
+            <MudItem xs="12" md="6">
+                <MudPaper Elevation="0" Class="pa-4" Style="background-color: rgba(255,255,255,0.05);">
+                    <MudText Typo="Typo.h5" Color="Color.Primary" Class="mb-4">Developer Tools</MudText>
+                    
+                    <MudList T="string" Dense="true">
+                        <MudListItem T="string" Icon="@Icons.Material.Filled.Architecture">
+                            <MudText Typo="Typo.body1">Architecture Documentation</MudText>
+                            <MudText Typo="Typo.caption">System design & data flow models</MudText>
+                        </MudListItem>
+                        <MudListItem T="string" Icon="@Icons.Material.Filled.Api">
+                            <MudText Typo="Typo.body1">API Endpoints</MudText>
+                            <MudText Typo="Typo.caption">Swagger UI accessible at /swagger</MudText>
+                        </MudListItem>
+                        <MudListItem T="string" Icon="@Icons.Material.Filled.Storage">
+                            <MudText Typo="Typo.body1">Database Schema</MudText>
+                            <MudText Typo="Typo.caption">EntityFramework Core migrations ready</MudText>
+                        </MudListItem>
+                        <MudListItem T="string" Icon="@Icons.Material.Filled.Security">
+                            <MudText Typo="Typo.body1">Authentication System</MudText>
+                            <MudText Typo="Typo.caption">JWT w/ Ed25519 signing & AES-256-GCM encryption</MudText>
+                        </MudListItem>
+                    </MudList>
+                    
+                    <MudDivider Class="my-4" />
+                    
+                    <MudText Typo="Typo.subtitle2" Color="Color.Warning" Class="mb-2">Features In Progress:</MudText>
+                    <MudProgressLinear Color="Color.Warning" Value="60" Class="my-2" />
+                    <MudText Typo="Typo.body2" Class="mt-2">
+                        Multi-tenant provisioning, crypto-signed license generation, partner branding system, 
+                        and Stripe subscription webhooks are currently under active development.
+                    </MudText>
+                </MudPaper>
+            </MudItem>
+        </MudGrid>
+    </MudPaper>
+    
+    <MudPaper Elevation="0" Class="mt-6 pa-4 d-flex justify-space-between align-center">
+        <MudText Typo="Typo.body2" Class="mud-text-secondary">
+            <MudIcon Icon="@Icons.Material.Filled.Info" Size="Size.Small" Class="mr-2" />
+            This environment is for development purposes only. Not for production use.
+        </MudText>
+        
+        <MudButton Variant="Variant.Filled" Color="Color.Primary" StartIcon="@Icons.Material.Filled.Terminal" Size="Size.Small">
+            Launch Dev Console
+        </MudButton>
     </MudPaper>
 </MudContainer>
+
+@code {
+    private string GetAppVersion()
+    {
+        var version = Assembly.GetExecutingAssembly().GetName().Version;
+        return version != null ? $"{version.Major}.{version.Minor}.{version.Build}" : "1.0.0";
+    }
+}

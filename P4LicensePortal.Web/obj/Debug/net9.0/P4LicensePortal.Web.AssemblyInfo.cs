@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("P4LicensePortal.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+19fc40cb7d6bd04d6dc8b4c226fd9f742f69ee1f")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f781e8d8bfe7ecf1ed83e59e0468ed0c7f0e60d5")]
 [assembly: System.Reflection.AssemblyProductAttribute("P4LicensePortal.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("P4LicensePortal.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

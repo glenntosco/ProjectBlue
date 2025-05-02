@@ -6,7 +6,7 @@ This document details the full local development setup for the P4 Licensing Plat
 
 ## 🧱 Platform Overview
 
-* **Frontend**: Blazor Server (`ProjectBlue.Server`)
+* **Frontend**: Blazor Server (`P4LicensePortal.Web`)
 * **Licensing Logic**: Encrypted and signed JSON with Ed25519 + AES-256-GCM
 * **Database**:
 
@@ -51,7 +51,7 @@ This document details the full local development setup for the P4 Licensing Plat
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/glenntosco/P4LicenseServer.git
+git clone https://github.com/glenntosco/ProjectBlue.git
 cd P4LicenseServer
 ```
 
